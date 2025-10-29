@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT+ Minimalist UI</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      width: 90%;
+      max-width: 900px;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Output Field */
+    .output {
+      background-color: #ffffff;
+      border-radius: 20px;
+      border: 2px solid #ddd;
+      width: 100%;
+      height: 200px;
+      margin-bottom: 20px;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 16px;
+      overflow-y: scroll;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+      min-height: 100px;
+      white-space: pre-wrap;
+    }
+
+    /* Buttons */
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .big-btn {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      width: 45%;
+      cursor: pointer;
+    }
+    .big-btn:hover {
+      background-color: #1e40af;
+    }
+
+    /* Input Field */
+    .input-field {
+      width: 70%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      margin-top: 10px;
+      height: 40px;
+    }
+
+    /* Radio Buttons */
+    .radio-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .radio-buttons input[type="radio"] {
+      margin: 0 10px;
+    }
+
+    /* Dropdown and Help Section */
+    .dropdown-container {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 10px;
+    }
+    .dropdown-container select {
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+    }
+
+    .help-btn {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background-color: #f59e0b;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .help-btn:hover {
+      background-color: #eab308;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Output Field -->
+  <div class="output" id="outputField">
+    Chatbot or Module Output Here
+  </div>
+
+  <!-- Radio Buttons for Action -->
+  <div class="radio-buttons">
+    <!-- File IT Button -->
+    <input type="radio" id="fileIT" name="action" value="fileIT">
+    <label for="fileIT" class="big-btn">File IT</label>
+
+    <!-- Tagging Button (#) -->
+    <input type="radio" id="tagButton" name="action" value="tagButton">
+    <label for="tagButton" class="big-btn">#</label>
+  </div>
+
+  <!-- Input Field -->
+  <input type="text" class="input-field" id="chatInput" placeholder="Type your message here...">
+
+  <!-- File Access Button (Top Right) -->
+  <div class="dropdown-container">
+    <select id="moduleFamilyDropdown">
+      <option value="Reason">Reason</option>
+      <option value="Reflection">Reflection</option>
+      <option value="Connection">Connection</option>
+      <option value="Creation">Creation</option>
+      <option value="Systems">Systems</option>
+    </select>
+  </div>
+
+  <!-- Help Button -->
+  <button class="help-btn" id="helpBtn">Help</button>
+</div>
+
+<script>
+  // Handle Help Button
+  document.getElementById("helpBtn").addEventListener("click", function() {
+    alert("This is the minimalist UI. The output field displays responses from the chatbot or system. Use the File IT button to save files, and the # button to tag messages.");
+  });
+
+  // Example Functionality for Tagging
+  document.getElementById("tagButton").addEventListener("click", function() {
+    let inputField = document.getElementById("chatInput");
+    inputField.value += " #tag";  // Append a tag to the input field text.
+  });
+</script>
+
+</body>
+</html>
